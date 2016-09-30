@@ -1,6 +1,6 @@
-[[imgs/dsa.jpg]]
+![logo](https://github.com/coded9/DSA/blob/master/imgs/dsa.jpg)
 > This repository contains the implementations of commonly used data structures and algorithms.
-# Table of Contents
+## Table of Contents
 - [ ] Arrays
 - [ ] LinkedLists
 - [ ] Stacks
