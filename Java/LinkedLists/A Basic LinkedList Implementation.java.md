@@ -12,7 +12,11 @@ public class LinkedList {
    }
       Node head;
     void printList(){
-    	 System.out.println("LinkedList  has been created");
+    	if(head==null){
+    		System.out.println("LinkedList is Empty:Cannot Print");
+    		return;
+    	}
+    	 System.out.println("Printing LinkedList");
 	   Node current = head;
 	   while(current!=null){
 		   System.out.print(current.data+" ");
@@ -50,6 +54,10 @@ public class LinkedList {
     			current = current.next;
     			position--;
     		}
+    		if(current==null){
+    			System.out.println("Cannot insert at given position");
+    			return;
+    		}
     		temp.next = current.next;
     		current.next = temp;
     	}
@@ -67,8 +75,96 @@ public class LinkedList {
 	   current.next = temp;
 	   
    }
+   void deleteNodeWithKey(int data){
+	   Node temp = head,prev = null;
+	   if(temp!=null&&temp.data == data){
+			 head = temp.next;
+			 return;
+		}
+	   while(temp!=null&&temp.data!=data){
+		  prev = temp;
+		  temp = temp.next;
+	   }
+	   if(temp==null) {
+		   System.out.println("Cannot delete:Node doesn't exist");
+		   return;
+	   }
+	   prev.next = temp.next;
+   }
+   void deleteNodeAtPos(int position){
+	   Node temp,prev;
+	   if(head==null){
+		   System.out.println("LinkedList is empty:Cannot delete");
+		   return;
+	   }
+	   else if(position==0){
+		   temp = head.next;
+		   head = temp;
+		   return;
+	   }
+	   else{
+		   temp = head;prev = null;
+		   while(position!=0&&temp!=null){
+			   prev = temp;
+			   temp = temp.next;
+			   position--;
+		   }
+		   if(temp==null){
+			   System.out.println("Cannot delete node at given position");
+			   return;
+		   }
+		   prev.next = temp.next;
+	   }
+   }
+   void deleteHead(){
+	   if(head==null){
+		   System.out.println("LinkedList is empty:Cannot delete");
+		   return;
+	   }
+	   Node temp;
+	   temp = head.next;
+	   head = temp;
+   }
+   void deleteTail(){
+	   if(head==null) {
+		   System.out.println("LinkedList is empty:Cannot delete");
+		   return;
+	   }
+	   if(head.next==null){
+		   head = null;
+		   return;
+	   }
+	   Node temp = head,prev = null;
+	   while(temp.next!=null){
+		   prev = temp;
+		   temp = temp.next;
+	   }
+	   prev.next = null;
+   }
+   void deleteAll(){
+	   head = null;
+   }
+   void getPosition(int data){
+	   if(head==null){
+		   System.out.println("LinkedList is Empty");
+		   return;
+	   }
+	   Node temp = head;
+	   int pos = 0;
+	   while(temp!=null&&temp.data!=data){
+		   temp = temp.next;
+		   pos++;
+	   }
+	   if(temp==null){
+		   System.out.println("Node doesn't exist");
+		   return;
+	   }
+	   System.out.println("Node is found at position "+ pos);
+   }
+   void reversePrint(){
+	   
+   }
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
      LinkedList llist = new LinkedList(); 
       llist.insertAtHead(5);
       llist.insertAtHead(2);
@@ -77,8 +173,30 @@ public class LinkedList {
       llist.insertAfter(7,2);
       llist.insertAtTail(8);
       llist.insertAtTail(9);
+      llist.insertAtTail(12);
+      llist.insertAtHead(13);
       llist.printList();
+      llist.deleteNodeWithKey(14);
+      llist.printList();
+      llist.deleteHead();
+      llist.printList();
+      llist.deleteHead();
+      llist.printList();
+      llist.deleteHead();
+      llist.printList();
+      llist.deleteTail();
+      llist.deleteNodeAtPos(3);
+      llist.printList();
+      llist.insertAfter(10,2);
+      llist.insertAfter(11,3);
+      llist.printList();
+      llist.deleteNodeAtPos(3);
+      llist.printList();
+      llist.getPosition(12);
+      //llist.deleteAll();
+      //llist.printList();
 	}
 
 }
+
 ```
