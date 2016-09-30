@@ -1,6 +1,4 @@
-# DSA
-Data Structures and Algorithms 
-> Data Structures and Algorithms 
+## Data Structures and Algorithms 
 This repository contains the implementations of commonly used data strcutures and algorithms.
 # Table of Contents
 - [ ] [Arrays]
