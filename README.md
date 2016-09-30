@@ -1,7 +1,8 @@
 ## Data Structures and Algorithms 
+[![logo](imgs/coding.jpg)]
 This repository contains the implementations of commonly used data strcutures and algorithms.
 # Table of Contents
-- [ ] [Arrays]
+- [ ] Arrays
 - [ ] LinkedLists
 - [ ] Stacks
 - [ ] Queues
