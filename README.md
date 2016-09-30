@@ -1,6 +1,6 @@
 ## Data Structures and Algorithms 
-[![logo](imgs/coding.jpg)]
-This repository contains the implementations of commonly used data strcutures and algorithms.
+[![logo](imgs/dsa.jpg)]
+This repository contains the implementations of commonly used data structures and algorithms.
 # Table of Contents
 - [ ] Arrays
 - [ ] LinkedLists
