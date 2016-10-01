@@ -11,7 +11,7 @@ public class DoubleLinkedList {
     		this.next = null;
     	}
     }
-    Node head;
+     static Node head;
     void insertAtHead(int data){
     	Node temp = new Node(data);
     	if(head==null){
@@ -37,7 +37,22 @@ public class DoubleLinkedList {
     	temp.prev = current;
     }
     void insertAfter(int position,int data){
-    	
+    	if(head==null){
+    		return;
+    	}
+    	Node temp = new Node(data);
+    	Node current = head;
+    	while(position!=0&&current!=null){
+    		current = current.next;
+    		position--;
+    	}
+    	if(current==null){
+    		System.out.println("Cannot insert at given position");
+    		return;
+    	}
+    	temp.next = current.next;
+    	temp.prev = current;
+    	current.next = temp;
     }
     void insertBefore(int position,int data){
     	if(position==0){
@@ -46,7 +61,8 @@ public class DoubleLinkedList {
     	}
     	Node current = head;
     	Node temp = new Node(data);
-    	while(position!=0&&current.next!=null){
+    	while(position!=0&&current!=null){
+    		//System.out.println(current.data);
     		current = current.next;
     		position--;
     	}
@@ -54,10 +70,15 @@ public class DoubleLinkedList {
     		System.out.println("Cannot insert at given position");
     		return;
     	}
-    	//System.out.println(current.data+" "+temp.data);
+    	//System.out.println(current.prev.data+" "+temp.data);
     	current.prev.next = temp;
-    	temp.next = current;
     	temp.prev = current.prev;
+    	temp.next = current;
+    	current.prev = temp;
+    	//printList();
+    //	System.out.println(current.prev.next.data);
+    	
+    	
     }
     void deleteHead(){
     	if(head==null){
@@ -81,6 +102,23 @@ public class DoubleLinkedList {
     		temp = temp.next;
     	}
     	temp.prev.next = null;
+    }
+    void deleteNode(Node del){
+    	if(head==null||del==null) return;
+    	if(head==del){
+    		head = del.next;
+    		return;
+    	}
+    	Node temp = head;
+    	while(temp!=del){
+    		temp = temp.next;
+    	}
+    	if(temp.next==null){
+    		temp.prev.next = null;
+    		return;
+    	}
+    	temp.prev.next = temp.next;
+    	temp.next.prev = temp.prev;
     }
     void printList(){
     	if(head==null){
@@ -110,13 +148,18 @@ public class DoubleLinkedList {
         dll.printList();
         dll.deleteTail();
         dll.printList();
-        dll.insertBefore(1, 9);
-        dll.printList();
-        dll.insertBefore(1, 19);
+        dll.insertAfter(1, 25);
+        dll.insertAfter(2, 18);
+        dll.insertAfter(3, 19);
+        dll.deleteNode(head.next.next.next.next);
         dll.printList();
         dll.insertBefore(3, 20);
         dll.printList();
-        dll.insertBefore(3, 25);
+        dll.insertBefore(4, 22);
+        dll.insertBefore(3, 23);
+        dll.insertAfter(0, 16);
+        dll.insertAfter(3, 34);
+        dll.insertAfter(5, 29);
         dll.printList();
         
 	}
