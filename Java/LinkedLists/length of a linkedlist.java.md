@@ -3,7 +3,8 @@
 
 import linkedlists.LinkedList.Node;
 
-public class LinkedLength {   
+public class LinkedLength { 
+Node head;
 	int listLength(Node head){   //Recursive
 		   if(head==null) return 0;
 		   else return 1+listLength(head.next);
@@ -24,7 +25,6 @@ package linkedlists;
 import linkedlists.LinkedList.Node;
 
 public class LinkedLength {
-	 Node head;   
 	int listLength(Node head){   //Recursive
 		   if(head==null) return 0;
 		   else return 1+listLength(head.next);
