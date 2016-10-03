@@ -93,3 +93,58 @@ public class AddLinkedLists1 {
 
 }
 ```
+# Using Stacks
+```java
+package linkedlists;
+
+import java.util.Stack;
+
+import linkedlists.LinkedList.Node;
+
+public class AddLinkedLists2 {
+    Node addLists(Node first,Node second){
+		Stack<Integer> st1 = new Stack<>();
+		Stack<Integer> st2 = new Stack<>();
+		LinkedList hm = new LinkedList();
+		Node head=null,temp;
+		while(first!=null){
+			st1.push(first.data);
+			first = first.next;
+		}
+		while(second!=null){
+			st2.push(second.data);
+			second = second.next;
+		}
+		int sum,carry=0;
+		//System.out.println(st1+" "+st2);
+        while(!st1.isEmpty()||!st2.isEmpty()) {
+        	sum = carry;
+        	if(!st1.isEmpty()) sum+=st1.pop();
+        	if(!st2.isEmpty()) sum += st2.pop();
+        	carry = sum/10;
+        	hm.insertAtHead(sum%10);
+        }
+    	if(carry>0) hm.insertAtHead(carry);
+    	return hm.head;
+    }
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+    AddLinkedLists2 al = new AddLinkedLists2();
+    LinkedList ll = new LinkedList();
+    LinkedList ll2 = new LinkedList();
+    LinkedList rs = new LinkedList();
+    ll.insertAtHead(4);
+    ll.insertAtHead(3);
+    ll.insertAtHead(2);
+    ll.insertAtHead(1);
+    ll2.insertAtTail(9);
+    ll2.insertAtTail(8);
+    ll.printList();
+    ll2.printList();
+    rs.head = al.addLists(ll.head,ll2.head);
+    rs.printList();
+	}
+
+}
+
+```
