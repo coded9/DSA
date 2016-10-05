@@ -45,3 +45,59 @@ public class SplitCircular {
 }
 
 ```
+#Optimized
+```java
+package linkedlists;
+
+import linkedlists.CircularLinkedList.Node;
+
+public class SplitCircular1 {
+    void split(CircularLinkedList cl){
+    	Node head,head1=null,head2=null,slowp,fastp;
+    	head = cl.head;
+    	if(head==null) return;
+    	slowp = head;
+    	fastp = head;
+    	while(fastp.next!=head&&fastp.next.next!=head){
+    		fastp = fastp.next.next;
+    		slowp = slowp.next;
+    	}
+    	if(fastp.next.next==head){
+    		fastp = fastp.next;
+    	}
+    	head1 = head;
+    	if(head.next!=head) head2 = slowp.next;//If there is only one node for splitting
+    	fastp.next = slowp.next;
+    	slowp.next = head;
+    	System.out.println("First half");
+    	printList(head1);
+    	System.out.println("Second half");
+    	printList(head2);
+    }
+    static void printList(Node head){
+    	if(head==null) return;
+    	Node temp = head;
+    	System.out.print(head.data+" ");
+        temp = temp.next;
+    	while(temp!=head){
+    		System.out.print(temp.data+" ");
+    		temp = temp.next;
+    	}
+    	System.out.println();
+    }
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		 SplitCircular1 sc = new SplitCircular1();
+		 CircularLinkedList cl = new CircularLinkedList();
+	     cl.insertAtFront(2);
+	     cl.insertAtFront(3);
+	     cl.insertAtFront(4);
+	     cl.insertAtFront(5);
+	     cl.insertAtEnd(6);
+	    cl.printList();
+	     sc.split(cl);
+	}
+
+}
+
+```
