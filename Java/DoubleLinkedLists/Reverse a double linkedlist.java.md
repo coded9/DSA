@@ -39,3 +39,41 @@ public class ReverseDouble {
 }
 
 ```
+#Optimized 
+```java
+package linkedlists;
+
+import linkedlists.DoubleLinkedList.Node;
+
+public class ReverseDouble {
+    void reverse(DoubleLinkedList dll){
+    	Node curr,nn,pn=null;
+    	curr = dll.head;
+    	while(curr!=null){
+    		nn = curr.next;
+    		curr.next = pn;
+    		curr.prev = nn;
+    		pn = curr;
+    		curr = nn;
+    		
+    	}
+    	dll.head = pn;
+    	dll.printList();
+    }
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+    ReverseDouble rd = new ReverseDouble();
+    DoubleLinkedList dll =  new DoubleLinkedList();
+    dll.insertAtHead(2);
+    dll.insertAtHead(3);
+    dll.insertAtHead(4);
+    dll.insertAtHead(5);
+    dll.insertAtHead(6);
+    dll.insertAtTail(1);
+    dll.printList();
+    rd.reverse(dll);
+	}
+
+}
+
+```
