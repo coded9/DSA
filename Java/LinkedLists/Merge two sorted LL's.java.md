@@ -22,13 +22,11 @@ public class SortedMerge {
     	    		break;
     	    	}
     			if(a.data<=b.data){
-    				Node new_node = new LinkedList().new Node(a.data);
-    				curr.next = new_node;
+    				curr.next = a;
     				a = a.next;
     			}
     			else{
-    				Node new_node = new LinkedList().new Node(b.data);
-    				curr.next = new_node;
+    				curr.next = b;
     				b = b.next;
     			}
     			curr = curr.next;
@@ -43,8 +41,8 @@ public class SortedMerge {
      LinkedList l2 = new LinkedList();
      LinkedList res = new LinkedList();
      l1.insertAtHead(11);
-     l1.insertAtHead(8);
-     l1.insertAtHead(4);
+     /*l1.insertAtHead(8);
+     l1.insertAtHead(4);*/
      l1.insertAtHead(1);
      l1.printList();
      l2.insertAtHead(9);
@@ -56,5 +54,6 @@ public class SortedMerge {
 	}
 
 }
+
 
 ```
