@@ -53,6 +53,7 @@ public class BubbleSort {
 	      inp = br.readLine().split(" ");
 	      int[] arr = new int[inp.length];
 	      int i,j,temp;
+	      boolean swap = false;
 	      for(i=0;i<arr.length;i++){
 	    	  arr[i] = Integer.parseInt(inp[i]);
 	      }
@@ -62,8 +63,10 @@ public class BubbleSort {
 	    			  temp = arr[j];
 	    			  arr[j] = arr[j+1];
 	    			  arr[j+1] = temp;
+	    			  swap = true;
 	    		  }
 	    	  }
+	    	  if(swap==false) break;
 	      }
 	      System.out.println("Array sorted using bubble sort");
 	      for(i=0;i<arr.length;i++){
@@ -72,4 +75,5 @@ public class BubbleSort {
 	}
 
 }
+
 ```
