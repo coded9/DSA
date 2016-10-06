@@ -129,3 +129,45 @@ public class SortedMerge2 {
 }
 
 ```
+#Method 3(Recursive)
+```java
+package linkedlists;
+
+import linkedlists.LinkedList.Node;
+
+public class SortedMerge3 {
+   Node sortMerge(Node a,Node b){
+	   Node head = null;
+	   if(a==null) return b;
+	   else if(b==null) return a;
+	   if(a.data<=b.data){
+		   head = a;
+		   head.next = sortMerge(a.next,b);
+	   }
+	   else{
+		   head = b;
+		   head.next = sortMerge(a,b.next);
+	   }
+	   return head;
+   }
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		SortedMerge3 sm = new SortedMerge3();
+		LinkedList l1 = new LinkedList();
+		LinkedList l2 = new LinkedList();
+		LinkedList res = new LinkedList();
+		l1.insertAtHead(11);
+		l1.insertAtHead(8);
+		l1.insertAtHead(4);
+		l1.insertAtHead(1);
+		l1.printList();
+		l2.insertAtHead(9);
+		l2.insertAtHead(3);
+		l2.insertAtHead(0);
+		l2.printList();
+		res.head = sm.sortMerge(l1.head, l2.head);
+		res.printList();
+	}
+
+}
+```
