@@ -11,7 +11,7 @@
 - [ ] Priority Queues and Heaps
 - [ ] Disjoint Sets
 - [ ] Graph Algorithms
-- [ ] Sorting
+- [ ] Sorting(https://github.com/coded9/DSA/tree/master/Java/Sorting)
 - [ ] Searching
 - [ ] Hashing
 - [ ] String Algorithms
