@@ -6,8 +6,8 @@
 - [ ] Arrays
 - [ ] [LinkedLists](https://github.com/coded9/DSA/tree/master/Java/LinkedLists)
       * [Single LinkedLists](https://github.com/coded9/DSA/tree/master/Java/LinkedLists)
-      * [Double LinkedLists]()
-      * [Circular LinkedLists]()
+      * [Double LinkedLists](https://github.com/coded9/DSA/tree/master/Java/DoubleLinkedLists)
+      * [Circular LinkedLists](https://github.com/coded9/DSA/tree/master/Java/CircularLinkedLists)
 - [ ] Stacks
 - [ ] Queues
 - [ ] Trees
