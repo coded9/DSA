@@ -5,6 +5,7 @@
 # Table of Contents
 - [ ] Arrays
 - [ ] [LinkedLists](https://github.com/coded9/DSA/tree/master/Java/LinkedLists)
+      ..* Single LinkedLists
 - [ ] Stacks
 - [ ] Queues
 - [ ] Trees
