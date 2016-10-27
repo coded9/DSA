@@ -24,26 +24,21 @@ public class BalancingParanthesis {
 					st.push(ch);
 				} else if (ch == ']' || ch == ')' || ch == '}') {
 					// System.out.println(st);
-					if (st.isEmpty()) {
+					if (st.isEmpty() || (ch == ']' && st.peek() != '[') || (ch == ')' && st.peek() != '(')
+							|| (ch == '}' && st.peek() != '{')) {
 						flag = false;
 						break;
-					} else {
-						if ((ch == ']' && st.peek() != '[') || (ch == ')' && st.peek() != '(')
-								|| (ch == '}' && st.peek() != '{')) {
-							flag = false;
-							break;
-						}
-						st.pop();
 					}
+					st.pop();
 				}
 			}
-
-			// System.out.println(st);
 			System.out.println(flag && st.isEmpty() ? "YES" : "NO");
 			st.clear();
-
 		}
-	}
 
+		// System.out.println(st);
+
+	}
 }
+
 ```
