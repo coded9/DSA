@@ -8,7 +8,7 @@
       * [Single LinkedLists](https://github.com/coded9/DSA/tree/master/Java/LinkedLists)
       * [Double LinkedLists](https://github.com/coded9/DSA/tree/master/Java/DoubleLinkedLists)
       * [Circular LinkedLists](https://github.com/coded9/DSA/tree/master/Java/CircularLinkedLists)
-- [ ] Stacks
+- [ ] [Stacks](https://github.com/coded9/DSA/tree/master/Java/Stacks)
 - [ ] Queues
 - [ ] Trees
 - [ ] Priority Queues and Heaps
