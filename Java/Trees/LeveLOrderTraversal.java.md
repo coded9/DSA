@@ -4,7 +4,7 @@ package trees;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class LeveLOrder {
+public class LeveLOrderTraversal {
 	
 	static void levelOrder(Node root){
 		if(root==null) return;
