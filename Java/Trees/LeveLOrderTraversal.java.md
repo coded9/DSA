@@ -1,5 +1,12 @@
 ```java
-static void levelOrder(Node root){
+package trees;
+
+import java.util.LinkedList;
+import java.util.Queue;
+
+public class LeveLOrder {
+	
+	static void levelOrder(Node root){
 		if(root==null) return;
 		Queue<Node> nodelist = new LinkedList();
 		nodelist.add(root);
@@ -25,4 +32,10 @@ static void levelOrder(Node root){
 	      levelOrder(tree.root);
 	}
 
+}
+
+
 ```
+        
+	
+	
