@@ -10,7 +10,7 @@
       * [Circular LinkedLists](https://github.com/coded9/DSA/tree/master/Java/CircularLinkedLists)
 - [ ] [Stacks](https://github.com/coded9/DSA/tree/master/Java/Stacks)
 - [ ] Queues
-- [ ] Trees
+- [ ] [Trees](https://github.com/coded9/DSA/tree/master/Java/Trees)
 - [ ] Priority Queues and Heaps
 - [ ] Disjoint Sets
 - [ ] Graph Algorithms
